@@ -16,9 +16,11 @@ describe DockingStation do
     it { expect(docking_station.bikes_docked[0]).to be_an_instance_of Bike }
   end
 
-  # it "doesn't give out bikes that don't exist" do
-  #   if docking_station.bikes_docked.length == 0
-  #     expect(docking_station.release_bike) #throws error
-  #   end
-  # end
+  describe "docking station is empty" do
+    before do
+      docking_station.bikes_docked = []
+    end
+    it { expect{docking_station.release_bike}.to raise_error("There are no bikes to take out.") }
+  end
+
 end

@@ -1,7 +1,7 @@
 DockingStation = Class.new
 
 class DockingStation
-  attr_reader :bikes_docked
+  attr_accessor :bikes_docked
 
   def initialize
     @bikes_docked = []
@@ -10,6 +10,7 @@ class DockingStation
   end
 
   def release_bike
+    raise "There are no bikes to take out." if @bikes_docked.empty?
     returned_bike = @bikes_docked[-1]
     @bikes_docked.pop
     return returned_bike
