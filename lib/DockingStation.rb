@@ -17,6 +17,7 @@ class DockingStation
   end
 
   def dock(bike)
+    raise "Docking station full." if !@bikes_docked.empty?
     @bikes_docked << bike
   end
 end
