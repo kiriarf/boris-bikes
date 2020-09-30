@@ -14,16 +14,15 @@ describe DockingStation do
     end
     it { expect(docking_station.bikes_docked.length).to eq 1 }
     it { expect(docking_station.bikes_docked[0]).to be_an_instance_of Bike }
-    it { expect{docking_station.dock(bike)}.to raise_error("Docking station full.") }
   end
 
-  # describe "docking station full" do
-  #   before do
-  #     docking_station.bikes_docked = []
-  #     docking_station.dock(bike)
-  #   end
-  #   it { expect{docking_station.dock(bike)}.to raise_error("Docking station full.") }
-  # end
+  describe "docking station full" do
+    before do
+      docking_station.bikes_docked = []
+      20.times { docking_station.dock(Bike.new) }
+    end
+    it { expect{docking_station.dock(bike)}.to raise_error("Docking station full.") }
+  end
 
   describe "docking station is empty" do
     before do
