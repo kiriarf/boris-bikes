@@ -1,0 +1,2 @@
+require 'Bike'
+require 'DockingStation'
