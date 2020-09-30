@@ -1,5 +1,5 @@
 require 'Docking_Station_Class'
 
 describe DockingStation do
-  # it "describes what a docking station does"
+  it { expect(DockingStation.new).to respond_to("release_bike") }
 end
