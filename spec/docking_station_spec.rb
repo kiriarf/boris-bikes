@@ -19,7 +19,7 @@ describe DockingStation do
   describe "docking station full" do
     before do
       docking_station.bikes_docked = []
-      20.times { docking_station.dock(Bike.new) }
+      docking_station.default_capacity.times { docking_station.dock(Bike.new) }
     end
     it { expect{docking_station.dock(bike)}.to raise_error("Docking station full.") }
   end
