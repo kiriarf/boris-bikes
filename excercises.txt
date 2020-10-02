@@ -1,3 +1,0 @@
-Type of error: NameError
-File path of error: /Users/dan/.rvm/rubies/ruby-2.7.0/bin/irb
-Line number of error: 2
